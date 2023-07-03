@@ -1,0 +1,75 @@
+{% extends "layouts/base.html" %}
+
+{% load static %} 
+
+
+{% block title %} Helpline {% endblock %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <!-- [ breadcrumb ] start -->
+        <!-- [ breadcrumb ] end -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- [ Main Content ] start -->
+                <div class="row">
+
+                    <!-- [ Hover-table ] start -->
+                    <div class="col-xl-12">
+                        <div class="card">
+                            <div class="card-header" style="margin-bottom: 1cm;">
+                                <h5>File a ticket or chat</h5>
+                            </div>
+
+                            <div class="form-group form-label-left">
+                                <label>File a ticket if you are new, else you can use chat feature.
+                                </label>
+                            </div>
+
+                            <form action="" class="form-horizontal form-label-left" style="margin:0 auto;">
+                                
+                                <div class="row form-group text-center">
+                                    
+                                    
+                                    <div class="text-center">
+                                        <button class="btn btn-primary">
+                                        <a href="{%url 'dashboard:add_task'%}" style="color: aliceblue;">File a ticket</a>
+                                    </button>
+                                    </div>
+
+                                    <div class="text-center">
+                                        <button class="btn btn-primary">
+                                        <a href="http://10.129.2.174:9015" style="color: aliceblue;">Chat</a>
+                                    </button>
+                                    </div>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- [ Main Content ] end -->
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+document.getElementById("form").onclick = function () {
+    console.log("nedirected")
+    location.href = "http://vmocsh.cse.iitb.ac.in/demo_chat/add_task/";
+};
+
+document.getElementById("chat").onclick = function () {
+    location.href = "http://10.129.2.174:9015/";
+};
+{% endblock javascripts %}
